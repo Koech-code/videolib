@@ -1,0 +1,53 @@
+{% load bootstrap5 %}
+{% load static %}   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" type="text/css">
+    {% bootstrap_css %}
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div id="contents">
+            <div class="row">
+                {% for v in all %}
+                <div class="col-sm-3">
+                    <h4>{{v.name}}</h4>
+                
+                
+                    <video width='300' height="200" controls>
+                        <source src="{{v.video.url}}" type="video/mp4">
+                    </video>
+
+                    <p>{{v.description}}</p>
+
+                {% for comment in comments %}
+                <p>{{comment.usercomment}}</p>
+                
+                <form action="." method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="text" placeholder="Add a comment ... "> 
+                    <button type="submit" id="cbutton">Comment</button>
+                </form>
+            </div>
+                {% endfor %}
+                {% endfor%}
+            </div>
+            <div class="col2">
+                <div class="card mt-2">
+                    <h3>Upload a video to library</h3>
+                    <form action="." method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <button type="submit" class=" upload btn-success">Upload video</button>
+                    </form>
+                </div>      
+            </div>
+        </div>
+    </div>
+</body>
+</html>

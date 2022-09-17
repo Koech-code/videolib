@@ -1,0 +1,33 @@
+html{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#contents{
+    display: flex;
+    justify-content: center;
+}
+
+h3{
+    font-family: 'Times New Roman';
+    color: green;
+}
+
+h4{
+    color: chocolate;
+    font-family: 'Times New Roman';
+}
+
+.upload{
+    border-radius: 5px;
+    font-family: 'Times New Roman';
+    font-size: 18px;
+}
+
+#cbutton{
+    background-color: rgb(156, 10, 181);
+    border-radius: 5px;
+    color: white;
+    font-family: 'Times New Roman';
+}
+
+
