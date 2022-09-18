@@ -13,3 +13,6 @@ class VisitorsComment(forms.ModelForm):
     class Meta:
         model=comments
         fields=['visitorscomment']
+        widgets = {
+            'visitorscomment': forms.TextInput(attrs={'class':'col-sm-4'})
+        }
