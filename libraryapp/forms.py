@@ -12,7 +12,7 @@ class VideoForm(forms.ModelForm):
 class VisitorsComment(forms.ModelForm):
     class Meta:
         model=comments
-        fields=['visitorscomment']
+        fields=['visitorspost', 'visitorscomment']
         widgets = {
             'visitorscomment': forms.TextInput(attrs={'class':'col-sm-4'})
         }
