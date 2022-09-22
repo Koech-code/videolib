@@ -24,18 +24,7 @@
                     </video>
 
                     <p>{{v.description}}</p>
-
-                {% for c in comment %}
-                <p>{{c.visitorscomment}}</p>
-                {% empty %}
-                <p>There are no comments yet.</p>
-                {% endfor %}
-                <form action="." method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <span style="display: flex; justify-content: center;"><div>{{comment_form.as_p}} </div><div><button type="submit" class="btn-primary">Comment</button></div></span>
-                    
-                </form>
-              
+                    <a href="{url 'addcomment'} ">Add comment</a>
             </div>
                 {% endfor%}
           

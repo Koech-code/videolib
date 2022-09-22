@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import VideoForm, VisitorsComment
 from .models import video, comments
 from django.http import HttpResponse
@@ -27,4 +27,18 @@ def index(request):
 
     return render(request, 'home.html', {'form':form,'all':videos, 'comment_form':comment_form, 'comment':comment})
 
+def CommentView(request, pk):
+    
+    comment=comments.objects.filter(visitorspost_id=pk)
+
+    if request.method == 'POST':
+        comment_form=VisitorsComment(request.POST)
+        if comment_form.is_valid():
+            visitor_comment = comment_form.save(commit=False)
+            visitor_comment.save()
+            return HttpResponse('Thank you for your comment.')
+    else:
+        comment_form=VisitorsComment()
+
+    return render(request, 'comments.html', {'comment_form':comment_form, 'comment':comment})
 

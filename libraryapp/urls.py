@@ -5,7 +5,7 @@ from . import views
 
 urlpatterns=[
     path('', views.index, name='home'),
-   
+    path('comment/<int:pk>/', views.CommentView, name='addcomment'),
 ]
 
 if settings.DEBUG:
