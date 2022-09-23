@@ -2,7 +2,7 @@ html{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-#contents >div{
+#contents{
     display: flex;
     justify-content: space-between;
 }
@@ -30,6 +30,11 @@ h4{
     font-family: 'Times New Roman';
 }
 
-.card{
-    background-color: aquamarine;
+.upload{
+    color: white;
+}
+
+.col11{
+    background-color: rgb(40, 202, 54);
+    width: 78vw;
 }

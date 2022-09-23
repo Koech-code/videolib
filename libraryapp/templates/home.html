@@ -15,7 +15,7 @@
         <div id="contents">
             <div class="col11 row ">
                 {% for v in all %}
-                <div class="col-md-3">
+                <div class="col-lg-3 mt-3">
                     <h4>{{v.name}}</h4>
                 
                 
@@ -23,14 +23,16 @@
                         <source src="{{v.video.url}}" type="video/mp4">
                     </video>
 
-                    <p>{{v.description}}</p>
+                    <div style="width: 320px;">
+                        <p>{{v.description}}</p>
+                    </div>
                     <a href="{url 'addcomment'} ">Add comment</a>
             </div>
                 {% endfor%}
           
             </div>
-            <div class="col22 row">
-                <div class="card mt-2">
+            <div class="col22 row" style="height: 40vh;">
+                <div class=" upload card mt-2 bg-dark">
                     <h3>Upload a video to library</h3>
                     <form action="." method="post" enctype="multipart/form-data">
                         {% csrf_token %}
@@ -41,5 +43,6 @@
             </div>
         </div>
     </div>
+    <footer>This is your footer</footer>
 </body>
 </html>
